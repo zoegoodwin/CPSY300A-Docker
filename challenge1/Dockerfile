@@ -1,4 +1,4 @@
-# Use the official image of NGINX
+# Use official image of NGINX
 FROM nginx:alpine
 
 # Copy static assets into the NGINX server

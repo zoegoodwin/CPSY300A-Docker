@@ -4,8 +4,6 @@ services:
     build: .
     volumes:
       - .:/usr/src/app
-    ports:
-      - "3000:3000"
 
   nginx:
     image: nginx:alpine
