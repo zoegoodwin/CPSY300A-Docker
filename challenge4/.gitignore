@@ -1,0 +1,7 @@
+Command used:
+
+docker-compose up -d --scale node-service=3: This command scales up the number of instances of the node-service to 3.
+The -d flag runs the containers in detached mode.
+The --scale node-service=3 option instructs Docker Compose to create three instances of the node-service.
+
+The output of the docker-compose up -d --scale node-service=3 command provides information about the scaling operation, including any warnings or errors encountered.
