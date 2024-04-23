@@ -1,0 +1,1 @@
+If there is a port error or any similar issue for challenge 4 scaling, please replace the docker-compose.yml file with the one in this folder. Thanks
