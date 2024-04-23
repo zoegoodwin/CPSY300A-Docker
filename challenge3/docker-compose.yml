@@ -17,7 +17,7 @@ services:
     build:
       context: ./docker/api
     ports:
-      - "3000"  
+      - "3000:3000"  
     depends_on:
       - db
     environment:
