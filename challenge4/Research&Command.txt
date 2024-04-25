@@ -1,0 +1,7 @@
+From the research I conducted, I found this information. I used this website: https://docs.docker.com/compose/reference/scale/
+
+To scale up the "node-service" from one to three instance we have to use the Docker Compose command docker-compose up --scale node-service=3. 
+This command increases the number of node-service containers running at the same time, 
+which enhances the service's ability to handle multiple requests simultaneously. 
+After executing the command, I verified the scaling by checking the output of docker-compose ps to ensure that the three instances are active.
+A screenshot of this can be found in the screenshots folder.
