@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  db:
+    build:
+      context: ./docker/db
+    environment:
+      MYSQL_ROOT_PASSWORD: "password123"
+      MYSQL_DATABASE: "booksDB"
+      MYSQL_USER: "dbUser"
+      MYSQL_PASSWORD: "password123"
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+
+  node-service:
+    build:
+      context: ./docker/api
+    ports:
+      - "3000"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_DATABASE: "booksDB"
+      DB_USERNAME: "dbUser"
+      DB_PASSWORD: "password123"
+    networks:
+      - app-network
+
+  nginx:
+    build:
+      context: ./docker/nginx
+    ports:
+      - "8080:80"
+    depends_on:
+      - node-service
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
